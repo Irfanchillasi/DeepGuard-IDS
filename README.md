@@ -72,24 +72,26 @@ python DeepGuard_Source_Code.py
 To demonstrate the system protecting a live plant:
 
 **Terminal 1 (Train the Logic & Generate Keys )**
+
 First, you need to generate the "brain" (the trained model file) that the DeepGuard system uses to identify attacks.
 
 Open a new terminal.
 Run the following command:
-
+```bash
 python DeepGuard_Source_Code.py
-
+```
 Action: Wait for it to finish training. It will generate files like deepguard_model_profile.npy and some SVGs.
 Note: It will pause at the end saying "Press Enter to exit...". Press Enter to close it. You can now close this terminal.
 
 **Terminal 2 ( Start the Virtual Plant (PLC))**
+
 Now, start the simulator that acts like the industrial machinery generating data.
 
 Open a second terminal.
 Run the command:
-
+```bash
 python DeepGuard_PLC_Simulator.py
-
+```
 Success: You should see a message: --- Virtual PLC Starting on 127.0.0.1:5020 ---.
 Keep this terminal open! It acts as the server.
 
@@ -99,9 +101,9 @@ Finally, start the detection system that connects to the plant and looks for att
 
 Open a third terminal.
 Run the command:
-
+```bash
 python DeepGuard_RealTime.py
-
+```
 Success: You should see SUCCESS: Connected to Industrial Controller. followed by a stream of "System Normal" messages.
 Test it: Every few seconds, the simulator randomly injects an "Attack". Watch this terminal to see if DeepGuard catches it with a 🚨 ALERT! message.
 ## 📂 Repository Structure
