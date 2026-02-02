@@ -71,19 +71,39 @@ python DeepGuard_Source_Code.py
 ### 3. Run Real-Time Modbus Simulation 🏭
 To demonstrate the system protecting a live plant:
 
-**Terminal 1 (The Power Plant Simulator)**
-```bash
-# This creates a virtual PLC on localhost:5020
+**Terminal 1 (Train the Logic & Generate Keys )**
+First, you need to generate the "brain" (the trained model file) that the DeepGuard system uses to identify attacks.
+
+Open a new terminal.
+Run the following command:
+
+python DeepGuard_Source_Code.py
+
+Action: Wait for it to finish training. It will generate files like deepguard_model_profile.npy and some SVGs.
+Note: It will pause at the end saying "Press Enter to exit...". Press Enter to close it. You can now close this terminal.
+
+**Terminal 2 ( Start the Virtual Plant (PLC))**
+Now, start the simulator that acts like the industrial machinery generating data.
+
+Open a second terminal.
+Run the command:
+
 python DeepGuard_PLC_Simulator.py
-```
 
-**Terminal 2 (The DeepGuard Security AI)**
-```bash
-# This connects to the simulator and monitors for attacks
+Success: You should see a message: --- Virtual PLC Starting on 127.0.0.1:5020 ---.
+Keep this terminal open! It acts as the server.
+
+**Terminal 3 Start DeepGuard (The Detector)**
+
+Finally, start the detection system that connects to the plant and looks for attacks.
+
+Open a third terminal.
+Run the command:
+
 python DeepGuard_RealTime.py
-```
-*You will see the AI connecting, reading live sensor data, and raising alerts instantly when an attack is injected.*
 
+Success: You should see SUCCESS: Connected to Industrial Controller. followed by a stream of "System Normal" messages.
+Test it: Every few seconds, the simulator randomly injects an "Attack". Watch this terminal to see if DeepGuard catches it with a 🚨 ALERT! message.
 ## 📂 Repository Structure
 
 ```
