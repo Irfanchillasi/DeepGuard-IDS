@@ -55,7 +55,7 @@ DeepGuard has been rigorously benchmarked against standard classifiers.
 ### 1. Initialize Environment
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/DeepGuard-IDS.git
+git clone https://github.com/Irfanchillasi/DeepGuard-IDS.git
 cd DeepGuard-IDS
 
 # Install dependencies
@@ -85,20 +85,6 @@ DeepGuard-IDS/
 - [ ] **Adversarial Defense:** Hardening the model against gradient-based perturbations.
 - [ ] **Federated Learning:** Distributed training across multiple power plants without sharing raw data.
 
-## 📜 Citation
-
-If you use DeepGuard in your research, please cite:
-
-```bibtex
-@article{deepguard2026,
-  title={DeepGuard: A Hybrid Convolutional-Recurrent Neural Network Framework for Real-Time Anomaly Detection in Critical Cyber-Physical Systems},
-  author={First A. Author and Second B. Author and Third C. Author},
-  journal={Proceedings of the IEEE International Conference on Cyber Security},
-  year={2026}
-}
-```
-
----
 <div align="center">
     
 **Secure. Intelligent. Autonomous.**  
