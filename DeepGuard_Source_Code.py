@@ -50,6 +50,10 @@ print("Training DeepGuard (Simulation Mode)...")
 means = np.mean(X_train, axis=0)
 stds = np.std(X_train, axis=0)
 
+# SAVE MODEL FOR REAL-TIME USE
+np.save("deepguard_model_profile.npy", np.stack([means, stds]))
+print("Trained Model Profile saved to 'deepguard_model_profile.npy'")
+
 # Inference
 print("Running Inference...")
 start_time = time.time()

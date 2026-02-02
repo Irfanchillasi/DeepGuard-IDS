@@ -10,7 +10,7 @@
 
 *A Hybrid CNN-LSTM Framework for Real-Time SCADA Security*
 
-[Report Bug](https://github.com/YOUR_USERNAME/DeepGuard-IDS/issues) • [Request Feature](https://github.com/YOUR_USERNAME/DeepGuard-IDS/issues)
+[Report Bug](https://github.com/Irfanchillasi/DeepGuard-IDS/issues) • [Request Feature](https://github.com/Irfanchillasi/DeepGuard-IDS/issues)
 
 </div>
 
@@ -55,18 +55,34 @@ DeepGuard has been rigorously benchmarked against standard classifiers.
 ### 1. Initialize Environment
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/DeepGuard-IDS.git
+git clone https://github.com/Irfanchillasi/DeepGuard-IDS.git
 cd DeepGuard-IDS
 
 # Install dependencies
 pip install -r requirements.txt
 ```
 
-### 2. Launch DeepGuard
+### 2. Launch DeepGuard (Training Mode)
 ```bash
 python DeepGuard_Source_Code.py
 ```
 *The system will automatically generate synthetic SCADA data, train the model, and output the diagnostics.*
+
+### 3. Run Real-Time Modbus Simulation 🏭
+To demonstrate the system protecting a live plant:
+
+**Terminal 1 (The Power Plant Simulator)**
+```bash
+# This creates a virtual PLC on localhost:5020
+python DeepGuard_PLC_Simulator.py
+```
+
+**Terminal 2 (The DeepGuard Security AI)**
+```bash
+# This connects to the simulator and monitors for attacks
+python DeepGuard_RealTime.py
+```
+*You will see the AI connecting, reading live sensor data, and raising alerts instantly when an attack is injected.*
 
 ## 📂 Repository Structure
 
@@ -90,10 +106,10 @@ DeepGuard-IDS/
 If you use DeepGuard in your research, please cite:
 
 ```bibtex
-@article{deepguard2026,
+@unpublished{deepguard2026,
   title={DeepGuard: A Hybrid Convolutional-Recurrent Neural Network Framework for Real-Time Anomaly Detection in Critical Cyber-Physical Systems},
-  author={First A. Author and Second B. Author and Third C. Author},
-  journal={Proceedings of the IEEE International Conference on Cyber Security},
+  author={Chillasi, Irfan et al.},
+  note={Under Review},
   year={2026}
 }
 ```
